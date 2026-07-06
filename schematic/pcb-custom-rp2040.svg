@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="monospace" font-size="11">
+  <!-- Board outline -->
+  <rect x="10" y="10" width="780" height="480" rx="12" fill="#1a5c1a" stroke="#0a3a0a" stroke-width="2"/>
+  <text x="20" y="30" fill="#fff" font-size="14" font-weight="bold">armkali Co-processor — RP2040 Custom PCB (top view)</text>
+  <text x="20" y="48" fill="#cfc" font-size="10">Kích thước thực tế: 30×20 mm — hàn trực tiếp vào x96q board</text>
+
+  <!-- Mounting holes -->
+  <circle cx="30" cy="70" r="4" fill="#333" stroke="#666"/>
+  <circle cx="770" cy="70" r="4" fill="#333" stroke="#666"/>
+  <circle cx="30" cy="460" r="4" fill="#333" stroke="#666"/>
+  <circle cx="770" cy="460" r="4" fill="#333" stroke="#666"/>
+
+  <!-- RP2040 SoC (QFN-56, 7×7 mm) -->
+  <rect x="320" y="180" width="100" height="100" fill="#111" stroke="#444" stroke-width="1.5" rx="4"/>
+  <circle cx="335" cy="195" r="3" fill="#555"/>
+  <text x="370" y="225" fill="#fff" text-anchor="middle" font-size="12" font-weight="bold">RP2040</text>
+  <text x="370" y="242" fill="#aaa" text-anchor="middle" font-size="9">QFN-56</text>
+  <text x="370" y="257" fill="#aaa" text-anchor="middle" font-size="9">7×7 mm</text>
+  <text x="370" y="272" fill="#6cf" text-anchor="middle" font-size="9">Dual M0+ 133MHz</text>
+
+  <!-- W25Q16 SPI Flash (SOIC-8) -->
+  <rect x="460" y="190" width="50" height="30" fill="#222" stroke="#555" rx="2"/>
+  <circle cx="468" cy="198" r="2" fill="#666"/>
+  <text x="485" y="210" fill="#fff" text-anchor="middle" font-size="9" font-weight="bold">W25Q16</text>
+  <text x="485" y="238" fill="#9cf" text-anchor="middle" font-size="9">SPI Flash</text>
+  <text x="485" y="250" fill="#9cf" text-anchor="middle" font-size="9">2 MB</text>
+
+  <!-- 12 MHz Crystal -->
+  <rect x="460" y="260" width="30" height="14" fill="#aaa" stroke="#555" rx="1"/>
+  <text x="475" y="271" fill="#000" text-anchor="middle" font-size="8" font-weight="bold">12M</text>
+  <text x="475" y="288" fill="#ccc" text-anchor="middle" font-size="9">XTAL</text>
+
+  <!-- 3.3V LDO (SOT-223) -->
+  <rect x="150" y="190" width="50" height="30" fill="#333" stroke="#666" rx="2"/>
+  <text x="175" y="208" fill="#fff" text-anchor="middle" font-size="9" font-weight="bold">AMS1117</text>
+  <text x="175" y="218" fill="#fff" text-anchor="middle" font-size="8">3.3V</text>
+  <text x="175" y="238" fill="#fc9" text-anchor="middle" font-size="9">LDO 5V→3.3V</text>
+
+  <!-- Bypass capacitors (cluster around RP2040) -->
+  <g fill="#c90" stroke="#860" stroke-width="0.5">
+    <rect x="290" y="175" width="6" height="10"/>
+    <rect x="300" y="175" width="6" height="10"/>
+    <rect x="310" y="175" width="6" height="10"/>
+    <rect x="290" y="285" width="6" height="10"/>
+    <rect x="300" y="285" width="6" height="10"/>
+    <rect x="310" y="285" width="6" height="10"/>
+    <rect x="425" y="175" width="6" height="10"/>
+    <rect x="435" y="175" width="6" height="10"/>
+    <rect x="425" y="285" width="6" height="10"/>
+    <rect x="435" y="285" width="6" height="10"/>
+  </g>
+  <text x="300" y="165" fill="#fc9" text-anchor="middle" font-size="9">100nF ×10</text>
+
+  <!-- Bulk caps near LDO -->
+  <rect x="220" y="195" width="8" height="20" fill="#447" stroke="#668"/>
+  <rect x="235" y="195" width="8" height="20" fill="#447" stroke="#668"/>
+  <text x="230" y="228" fill="#9cf" text-anchor="middle" font-size="9">10µF ×2</text>
+
+  <!-- UART header (3-pin, kết nối pad x96q) -->
+  <rect x="30" y="150" width="70" height="50" fill="#1a1a1a" stroke="#888" stroke-width="1.5" rx="3"/>
+  <circle cx="45" cy="165" r="4" fill="#c33"/>
+  <circle cx="45" cy="180" r="4" fill="#3c3"/>
+  <circle cx="45" cy="195" r="4" fill="#333"/>
+  <text x="65" y="170" fill="#fff" font-size="10" font-weight="bold">TX</text>
+  <text x="65" y="185" fill="#fff" font-size="10" font-weight="bold">RX</text>
+  <text x="65" y="200" fill="#fff" font-size="10" font-weight="bold">GND</text>
+  <text x="65" y="220" fill="#fc9" font-size="9" font-weight="bold">→ pad UART0 x96q</text>
+  <text x="65" y="232" fill="#fc9" font-size="8">(3 dây, 2.54mm pitch)</text>
+
+  <!-- I2C sensor header (4-pin) -->
+  <rect x="30" y="280" width="70" height="45" fill="#1a1a1a" stroke="#888" stroke-width="1.5" rx="3"/>
+  <circle cx="45" cy="293" r="4" fill="#c33"/>
+  <circle cx="45" cy="308" r="4" fill="#3c3"/>
+  <circle cx="45" cy="323" r="4" fill="#cc3"/>
+  <text x="65" y="298" fill="#fff" font-size="10">3V3</text>
+  <text x="65" y="313" fill="#fff" font-size="10">SDA</text>
+  <text x="65" y="328" fill="#fff" font-size="10">SCL</text>
+  <text x="65" y="345" fill="#9cf" font-size="9">→ BME280 / RTC</text>
+
+  <!-- GPIO breakout header 2×8 (16 pin) -->
+  <rect x="580" y="130" width="40" height="240" fill="#1a1a1a" stroke="#888" stroke-width="1.5" rx="3"/>
+  <g fill="#fc9" stroke="#666">
+    <circle cx="595" cy="145" r="3"/>
+    <circle cx="595" cy="160" r="3"/>
+    <circle cx="595" cy="175" r="3"/>
+    <circle cx="595" cy="190" r="3"/>
+    <circle cx="595" cy="205" r="3"/>
+    <circle cx="595" cy="220" r="3"/>
+    <circle cx="595" cy="235" r="3"/>
+    <circle cx="595" cy="250" r="3"/>
+    <circle cx="605" cy="145" r="3"/>
+    <circle cx="605" cy="160" r="3"/>
+    <circle cx="605" cy="175" r="3"/>
+    <circle cx="605" cy="190" r="3"/>
+    <circle cx="605" cy="205" r="3"/>
+    <circle cx="605" cy="220" r="3"/>
+    <circle cx="605" cy="235" r="3"/>
+    <circle cx="605" cy="250" r="3"/>
+  </g>
+  <text x="640" y="150" fill="#fff" font-size="9">3V3</text>
+  <text x="640" y="165" fill="#fff" font-size="9">GND</text>
+  <text x="640" y="180" fill="#fff" font-size="9">GP2</text>
+  <text x="640" y="195" fill="#fff" font-size="9">GP3</text>
+  <text x="640" y="210" fill="#fff" font-size="9">GP4 (SDA)</text>
+  <text x="640" y="225" fill="#fff" font-size="9">GP5 (SCL)</text>
+  <text x="640" y="240" fill="#fff" font-size="9">GP6</text>
+  <text x="640" y="255" fill="#fff" font-size="9">GP7</text>
+  <text x="550" y="150" fill="#fff" font-size="9" text-anchor="end">GP8</text>
+  <text x="550" y="165" fill="#fff" font-size="9" text-anchor="end">GP9</text>
+  <text x="550" y="180" fill="#fff" font-size="9" text-anchor="end">GP10</text>
+  <text x="550" y="195" fill="#fff" font-size="9" text-anchor="end">GP11</text>
+  <text x="550" y="210" fill="#fff" font-size="9" text-anchor="end">GP12</text>
+  <text x="550" y="225" fill="#fff" font-size="9" text-anchor="end">GP13</text>
+  <text x="550" y="240" fill="#fff" font-size="9" text-anchor="end">GP14</text>
+  <text x="550" y="255" fill="#fff" font-size="9" text-anchor="end">GP15</text>
+  <text x="600" y="285" fill="#fc9" text-anchor="middle" font-size="10" font-weight="bold">GPIO Header 2×16</text>
+  <text x="600" y="298" fill="#fc9" text-anchor="middle" font-size="9">(relay, LED, servo, sensor)</text>
+
+  <!-- ADC input header (analog sensors) -->
+  <rect x="580" y="320" width="40" height="60" fill="#1a1a1a" stroke="#888" stroke-width="1.5" rx="3"/>
+  <circle cx="595" cy="335" r="3" fill="#fc9" stroke="#666"/>
+  <circle cx="595" cy="350" r="3" fill="#fc9" stroke="#666"/>
+  <circle cx="595" cy="365" r="3" fill="#fc9" stroke="#666"/>
+  <circle cx="605" cy="335" r="3" fill="#c33"/>
+  <circle cx="605" cy="350" r="3" fill="#333"/>
+  <circle cx="605" cy="365" r="3" fill="#333"/>
+  <text x="640" y="338" fill="#fff" font-size="9">GP26 (ADC0)</text>
+  <text x="640" y="353" fill="#fff" font-size="9">GP27 (ADC1)</text>
+  <text x="640" y="368" fill="#fff" font-size="9">GP28 (ADC2)</text>
+  <text x="600" y="395" fill="#9cf" text-anchor="middle" font-size="9">Analog inputs</text>
+
+  <!-- Debug SWD pads (test points) -->
+  <g fill="#ccc" stroke="#666">
+    <circle cx="350" y="350" r="4"/>
+    <circle cx="365" cy="350" r="4"/>
+    <circle cx="380" cy="350" r="4"/>
+  </g>
+  <text x="350" y="370" fill="#fff" font-size="8">SWDIO</text>
+  <text x="365" y="370" fill="#fff" font-size="8">SWCLK</text>
+  <text x="380" y="370" fill="#fff" font-size="8">GND</text>
+  <text x="365" y="385" fill="#c99" text-anchor="middle" font-size="9">SWD debug (flash firmware lần đầu)</text>
+
+  <!-- LED indicators -->
+  <circle cx="260" y="140" r="4" fill="#3f3" stroke="#090" stroke-width="1"/>
+  <circle cx="275" cy="140" r="4" fill="#f33" stroke="#900" stroke-width="1"/>
+  <text x="250" y="130" fill="#fff" font-size="9">PWR</text>
+  <text x="280" y="130" fill="#fff" font-size="9">USR</text>
+  <text x="267" y="160" fill="#9cf" text-anchor="middle" font-size="9">LED onboard</text>
+
+  <!-- Tact button -->
+  <rect x="230" cy="100" width="16" height="16" fill="#ddd" stroke="#666" rx="2"/>
+  <text x="238" y="128" fill="#fff" text-anchor="middle" font-size="9">RST</text>
+  <text x="238" y="113" fill="#fff" text-anchor="middle" font-size="8">BOOT</text>
+
+  <!-- Power input pads (solder to x96q 5V rail) -->
+  <rect x="100" y="100" width="60" height="30" fill="#833" stroke="#a55" stroke-width="1.5" rx="3"/>
+  <text x="130" y="118" fill="#fff" text-anchor="middle" font-size="10" font-weight="bold">+5V  GND</text>
+  <text x="130" y="148" fill="#fc9" text-anchor="middle" font-size="9">← Hàn vào rail 5V của x96q</text>
+
+  <!-- Board title -->
+  <text x="400" y="440" fill="#fff" text-anchor="middle" font-size="12" font-weight="bold">armkali-coproc v1.0</text>
+  <text x="400" y="455" fill="#cfc" text-anchor="middle" font-size="10">ryzen30xx/armkali · MIT License</text>
+  <text x="400" y="470" fill="#9cf" text-anchor="middle" font-size="9">30×20 mm · 2-layer FR4 · 1.6 mm thickness · 35µm copper</text>
+
+  <!-- Legend box -->
+  <rect x="30" y="400" width="340" height="80" fill="#0a3a0a" stroke="#3a6a3a" rx="3"/>
+  <text x="40" y="418" fill="#fff" font-size="10" font-weight="bold">BOM (Bill of Materials):</text>
+  <text x="40" y="432" fill="#ccc" font-size="9">• RP2040 QFN-56 (~35k)    • W25Q16 SOIC-8 (~8k)</text>
+  <text x="40" y="446" fill="#ccc" font-size="9">• AMS1117-3.3 (~2k)       • 12 MHz XTAL (~2k)</text>
+  <text x="40" y="460" fill="#ccc" font-size="9">• 100nF cap ×10 + 10µF ×2 (~3k)</text>
+  <text x="40" y="474" fill="#ccc" font-size="9">• Headers + passives (~10k)</text>
+  <text x="200" y="474" fill="#9f9" font-weight="bold">Tổng ~60k VNĐ / board</text>
+</svg>
